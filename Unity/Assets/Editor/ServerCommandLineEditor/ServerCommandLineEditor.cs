@@ -405,6 +405,7 @@ namespace ETEditor
 				}
 
 				string arguments = $"App.dll --appId={startConfig.AppId} --appType={startConfig.AppType} --config=../Config/StartConfig/{this.fileName}";
+				//ProcessHelper.Run("dotnet", arguments, "../Bin/");
 				var runningProcess = ProcessHelper.Run("/usr/local/share/dotnet/dotnet", arguments, Path.GetFullPath("../Bin/"));
 				EditorPrefs.SetInt("CurRunningServer", runningProcess.Id);
 				Debug.Log("CurRunningServer ： " +  runningProcess.Id);

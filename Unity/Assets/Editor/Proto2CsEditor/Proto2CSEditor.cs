@@ -16,6 +16,7 @@ namespace ETEditor
 		[MenuItem("Tools/Proto2CS")]
 		public static void AllProto2CS()
 		{
+			//Process process = ProcessHelper.Run("dotnet", "Proto2CS.dll", "../Proto/", true);
 			Process process = ProcessHelper.Run("/usr/local/share/dotnet/dotnet", "Proto2CS.dll", Path.GetFullPath("../Proto/"), true);
 			Log.Info(process.StandardOutput.ReadToEnd());
 			AssetDatabase.Refresh();
