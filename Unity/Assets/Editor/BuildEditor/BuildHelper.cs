@@ -1,6 +1,9 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using ETModel;
 using UnityEditor;
+using Debug = UnityEngine.Debug;
+using FileVersionInfo = ETModel.FileVersionInfo;
 
 namespace ETEditor
 {
@@ -14,7 +17,32 @@ namespace ETEditor
 		[MenuItem("Tools/web资源服务器")]
 		public static void OpenFileServer()
 		{
-			ProcessHelper.Run("dotnet", "FileServer.dll", "../FileServer/");
+			//ProcessHelper.Run("dotnet", "FileServer.dll", "../FileServer/");
+			var runningProcess = ProcessHelper.Run("/usr/local/share/dotnet/dotnet", "FileServer.dll", Path.GetFullPath("../FileServer/"));
+			EditorPrefs.SetInt("CurRunningFileServer", runningProcess.Id);
+			Debug.Log("FileServer start with id: " + runningProcess.Id);
+		}
+		
+		[MenuItem("Tools/关闭web资源服务器", false)]
+		public static void CloseFileServer()
+		{
+			if (EditorPrefs.HasKey("CurRunningFileServer"))
+			{
+				Debug.Log("Try kill file server: " + EditorPrefs.GetInt("CurRunningFileServer"));
+				Process.GetProcessById(EditorPrefs.GetInt("CurRunningFileServer")).Kill();
+				EditorPrefs.DeleteKey("CurRunningFileServer");
+				Debug.Log("Success!");
+			}
+			else
+			{
+				Debug.Log("No file server running! ");
+			}
+		}
+		
+		[MenuItem("Tools/关闭web资源服务器", true)]
+		public static bool CheckFileServerRunning()
+		{
+			return EditorPrefs.HasKey("CurRunningFileServer");
 		}
 
 		public static void Build(PlatformType type, BuildAssetBundleOptions buildAssetBundleOptions, BuildOptions buildOptions, bool isBuildExe, bool isContainAB)
