@@ -8,6 +8,7 @@ using ETModel;
 using MongoDB.Bson;
 using UnityEditor;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace ETEditor
 {
@@ -28,7 +29,7 @@ namespace ETEditor
 		private AppType AppType = AppType.None;
 
 		private readonly List<StartConfig> startConfigs = new List<StartConfig>();
-
+		
 		[MenuItem("Tools/命令行配置")]
 		private static void ShowWindow()
 		{
@@ -404,8 +405,21 @@ namespace ETEditor
 				}
 
 				string arguments = $"App.dll --appId={startConfig.AppId} --appType={startConfig.AppType} --config=../Config/StartConfig/{this.fileName}";
-				ProcessHelper.Run("dotnet", arguments, "../Bin/");
+				var runningProcess = ProcessHelper.Run("/usr/local/share/dotnet/dotnet", arguments, Path.GetFullPath("../Bin/"));
+				EditorPrefs.SetInt("CurRunningServer", runningProcess.Id);
+				Debug.Log("CurRunningServer ： " +  runningProcess.Id);
+				
 			}
+
+			if (EditorPrefs.HasKey("CurRunningServer"))
+			{
+				if (GUILayout.Button("关闭服务器"))
+				{
+					Process.GetProcessById(EditorPrefs.GetInt("CurRunningServer")).Kill();
+					EditorPrefs.DeleteKey("CurRunningServer");
+				}
+			}
+
 			GUILayout.EndHorizontal();
 		}
 		
