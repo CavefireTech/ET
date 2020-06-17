@@ -9,7 +9,7 @@ namespace ETHotfix
 		protected override async ETTask Run(ETModel.Session session, M2C_CreateUnits message)
 		{	
 			UnitComponent unitComponent = ETModel.Game.Scene.GetComponent<UnitComponent>();
-			
+			UnitFactory.CreateEnemy();
 			foreach (UnitInfo unitInfo in message.Units)
 			{
 				if (unitComponent.Get(unitInfo.UnitId) != null)

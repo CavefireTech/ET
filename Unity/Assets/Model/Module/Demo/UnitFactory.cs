@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using BehaviorDesigner.Runtime;
 
 namespace ETModel
 {
@@ -22,6 +23,17 @@ namespace ETModel
 
             unitComponent.Add(unit);
             return unit;
+        }
+
+        public static BehaviorTree CreateEnemy()
+        {
+	        ResourcesComponent resourcesComponent = Game.Scene.GetComponent<ResourcesComponent>();
+	        GameObject bundleGameObject = (GameObject)resourcesComponent.GetAsset("enemy.unity3d", "Enemy");
+	        
+	        GameObject prefab = bundleGameObject.Get<GameObject>("Enemy1");
+	        GameObject go = UnityEngine.Object.Instantiate(prefab);
+	        BehaviorTree behaviorTree = go.GetComponent<BehaviorTree>();
+	        return behaviorTree;
         }
     }
 }

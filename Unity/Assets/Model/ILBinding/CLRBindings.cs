@@ -70,6 +70,9 @@ namespace ILRuntime.Runtime.Generated
             ETModel_AppTypeHelper_Binding.Register(app);
             ETModel_GameObjectHelper_Binding.Register(app);
             UnityEngine_TextAsset_Binding.Register(app);
+            ETModel_AsyncETTaskMethodBuilder_Binding.Register(app);
+            ETModel_ETTask_Binding.Register(app);
+            ETModel_ETTask_Binding_Awaiter_Binding.Register(app);
             ETModel_AsyncETVoidMethodBuilder_Binding.Register(app);
             ETModel_GlobalConfigComponent_Binding.Register(app);
             ETModel_GlobalProto_Binding.Register(app);
@@ -79,8 +82,6 @@ namespace ILRuntime.Runtime.Generated
             ETModel_SessionComponent_Binding.Register(app);
             ETModel_ComponentFactory_Binding.Register(app);
             ETModel_PlayerComponent_Binding.Register(app);
-            ETModel_ETTask_Binding.Register(app);
-            ETModel_ETTask_Binding_Awaiter_Binding.Register(app);
             ETModel_SceneChangeComponent_Binding.Register(app);
             ETModel_C2G_EnterMap_Binding.Register(app);
             ETModel_Session_Binding.Register(app);
@@ -88,12 +89,12 @@ namespace ILRuntime.Runtime.Generated
             ETModel_ETTask_1_IResponse_Binding_Awaiter_Binding.Register(app);
             ETModel_G2C_EnterMap_Binding.Register(app);
             ETModel_Player_Binding.Register(app);
+            ETModel_UnitFactory_Binding.Register(app);
             ETModel_M2C_CreateUnits_Binding.Register(app);
             Google_Protobuf_Collections_RepeatedField_1_UnitInfo_Binding.Register(app);
             System_Collections_Generic_IEnumerator_1_UnitInfo_Binding.Register(app);
             ETModel_UnitInfo_Binding.Register(app);
             ETModel_UnitComponent_Binding.Register(app);
-            ETModel_UnitFactory_Binding.Register(app);
             UnityEngine_Vector3_Binding.Register(app);
             ETModel_Unit_Binding.Register(app);
             ETModel_M2C_PathfindingResult_Binding.Register(app);
@@ -113,6 +114,8 @@ namespace ILRuntime.Runtime.Generated
             UnityEngine_UI_Button_Binding.Register(app);
             ETModel_ActionHelper_Binding.Register(app);
             ETModel_AssetBundleHelper_Binding.Register(app);
+            UnityEngine_Color_Binding.Register(app);
+            UnityEngine_UI_Graphic_Binding.Register(app);
             UnityEngine_UI_InputField_Binding.Register(app);
             Google_Protobuf_ProtoPreconditions_Binding.Register(app);
             Google_Protobuf_CodedOutputStream_Binding.Register(app);
