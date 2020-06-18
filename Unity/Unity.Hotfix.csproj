@@ -88,6 +88,8 @@
      <Compile Include="Assets\Hotfix\Init.cs" />
      <Compile Include="Assets\Hotfix\Module\Actor\IActorMessage.cs" />
      <Compile Include="Assets\Hotfix\Module\ActorLocation\IActorLocationMessage.cs" />
+     <Compile Include="Assets\Hotfix\Module\BehaviorTree\IBtAction.cs" />
+     <Compile Include="Assets\Hotfix\Module\BehaviorTree\Movement.cs" />
      <Compile Include="Assets\Hotfix\Module\Config\ACategory.cs" />
      <Compile Include="Assets\Hotfix\Module\Config\ConfigComponent.cs" />
      <Compile Include="Assets\Hotfix\Module\Config\ConfigHelper.cs" />

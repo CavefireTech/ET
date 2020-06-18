@@ -66,6 +66,9 @@ namespace ILRuntime.Runtime.Generated
             ETModel_Define_Binding.Register(app);
             ETModel_Entity_Binding.Register(app);
             ETModel_ResourcesComponent_Binding.Register(app);
+            BehaviorDesigner_Runtime_Tasks_Task_Binding.Register(app);
+            UnityEngine_Component_Binding.Register(app);
+            UnityEngine_Vector3_Binding.Register(app);
             ETModel_ConfigAttribute_Binding.Register(app);
             ETModel_AppTypeHelper_Binding.Register(app);
             ETModel_GameObjectHelper_Binding.Register(app);
@@ -95,7 +98,6 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_IEnumerator_1_UnitInfo_Binding.Register(app);
             ETModel_UnitInfo_Binding.Register(app);
             ETModel_UnitComponent_Binding.Register(app);
-            UnityEngine_Vector3_Binding.Register(app);
             ETModel_Unit_Binding.Register(app);
             ETModel_M2C_PathfindingResult_Binding.Register(app);
             ETModel_AnimatorComponent_Binding.Register(app);
@@ -150,7 +152,6 @@ namespace ILRuntime.Runtime.Generated
             System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding_ValueCollection_Binding.Register(app);
             System_Collections_Generic_Dictionary_2_String_ILTypeInstance_Binding_ValueCollection_Binding_Enumerator_Binding.Register(app);
-            UnityEngine_Component_Binding.Register(app);
             UnityEngine_Canvas_Binding.Register(app);
 
             ILRuntime.CLR.TypeSystem.CLRType __clrType = null;

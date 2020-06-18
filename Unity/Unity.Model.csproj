@@ -149,6 +149,7 @@
      <Compile Include="Assets\Model\Helper\PathHelper.cs" />
      <Compile Include="Assets\Model\Helper\PositionHelper.cs" />
      <Compile Include="Assets\Model\Helper\ResourcesHelper.cs" />
+     <Compile Include="Assets\Model\ILBinding\BehaviorDesigner_Runtime_Tasks_Task_Binding.cs" />
      <Compile Include="Assets\Model\ILBinding\CLRBindings.cs" />
      <Compile Include="Assets\Model\ILBinding\ETModel_ActionHelper_Binding.cs" />
      <Compile Include="Assets\Model\ILBinding\ETModel_AnimatorComponent_Binding.cs" />
@@ -297,6 +298,8 @@
      <Compile Include="Assets\Model\Module\AssetsBundle\BundleDownloaderComponent.cs" />
      <Compile Include="Assets\Model\Module\AssetsBundle\ResourcesComponent.cs" />
      <Compile Include="Assets\Model\Module\AssetsBundle\VersionConfig.cs" />
+     <Compile Include="Assets\Model\Module\BehaviorTree\HotfixBtActionAttribute.cs" />
+     <Compile Include="Assets\Model\Module\BehaviorTree\HotfixedAction.cs" />
      <Compile Include="Assets\Model\Module\Config\ACategory.cs" />
      <Compile Include="Assets\Model\Module\Config\AConfigComponent.cs" />
      <Compile Include="Assets\Model\Module\Config\ConfigAttribute.cs" />

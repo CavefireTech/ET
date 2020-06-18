@@ -416,7 +416,15 @@ namespace ETEditor
 			{
 				if (GUILayout.Button("关闭服务器"))
 				{
-					Process.GetProcessById(EditorPrefs.GetInt("CurRunningServer")).Kill();
+					try
+					{
+						Process.GetProcessById(EditorPrefs.GetInt("CurRunningServer")).Kill();
+					}
+					catch
+					{
+						// ignored
+					}
+
 					EditorPrefs.DeleteKey("CurRunningServer");
 				}
 			}

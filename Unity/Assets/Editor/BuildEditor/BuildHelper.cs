@@ -29,7 +29,14 @@ namespace ETEditor
 			if (EditorPrefs.HasKey("CurRunningFileServer"))
 			{
 				Debug.Log("Try kill file server: " + EditorPrefs.GetInt("CurRunningFileServer"));
-				Process.GetProcessById(EditorPrefs.GetInt("CurRunningFileServer")).Kill();
+				try
+				{
+					Process.GetProcessById(EditorPrefs.GetInt("CurRunningFileServer"))?.Kill();
+				}
+				catch
+				{
+					// ignored
+				}
 				EditorPrefs.DeleteKey("CurRunningFileServer");
 				Debug.Log("Success!");
 			}

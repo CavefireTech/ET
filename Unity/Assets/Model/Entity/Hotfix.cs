@@ -13,6 +13,13 @@ namespace ETModel
 	{
 #if ILRuntime
 		private ILRuntime.Runtime.Enviorment.AppDomain appDomain;
+		public ILRuntime.Runtime.Enviorment.AppDomain AppDomain
+		{
+			get
+			{
+				return this.appDomain;
+			}
+		}
 		private MemoryStream dllStream;
 		private MemoryStream pdbStream;
 #else

@@ -82,6 +82,7 @@
      <Compile Include="Assets\Editor\BehaviorDesignerEditor\BehaviorTreeInspector.cs" />
      <Compile Include="Assets\Editor\BehaviorDesignerEditor\ExternalBehaviorTreeInspector.cs" />
      <Compile Include="Assets\Editor\BehaviorDesignerEditor\Object Drawers\FloatSliderDrawer.cs" />
+     <Compile Include="Assets\Editor\BehaviorDesignerEditor\Object Drawers\HotfixBtActionDrawer.cs" />
      <Compile Include="Assets\Editor\BehaviorDesignerEditor\Object Drawers\IntSliderDrawer.cs" />
      <Compile Include="Assets\Editor\BuildEditor\BuildEditor.cs" />
      <Compile Include="Assets\Editor\BuildEditor\BuildHelper.cs" />
@@ -730,6 +731,10 @@
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{E15BADD2-3A26-309A-AB0F-DC5B08044350}</Project>
       <Name>Unity.ThirdParty</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Hotfix.csproj">
+      <Project>{1066F652-6A89-D1C4-9881-1A19DF7AB80E}</Project>
+      <Name>Unity.Hotfix</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
